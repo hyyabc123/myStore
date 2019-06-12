@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let Arr=['a',2,4,5,'h'] 
+        let  brr = [1,23,423,234,34,54,65,23,54,12,13]
+        function myForeEach(fn) {       
+            let i=0
+            while(i<this.length){   // 高阶方法
+                fn(this[i],i)
+                i++
+            }
+            // for(var i=0;i<this.length;i++){
+            //     fn(this[i])
+            // }
+        }
+        Array.prototype.myForeEach=myForeEach  // 挂载到数组原型上 
+
+        Arr.myForeEach((item,index)=>{  // 效果
+            console.log(item,index)
+        })
+        brr.myForeEach((item,index)=>{ // 效果
+            console.log(item,index)
+        })
+    </script>
+</body>
+</html>
